@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حاسبة أبعاد الحاوية</title>
+    <!-- إضافة مكتبة Three.js -->
+    <!-- script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script-->
+    <!-- script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.min.js"></script-->
+    <script src="./js/three.min.js"></script>
+    <script src="./js/OrbitControls.min.js"></script>
+    
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="module" src="./js/index.js"></script>
+</head>
+<body>
+    <div id="stdiv" class="container">
+        <div class="container-main">
+            <h1 class="title">حاسبة أصغر مساحة سطحية للحاوية مع ترتيب العبوات</h1>
+
+            <form id="cartonForm">
+                <div class="grid">
+                    <div>
+                        <label for="itemLength" class="input-label">طول العبوة (سم):</label>
+                        <input type="number" id="itemLength" step="any" required class="input-field" placeholder="مثال: 13.5" />
+                    </div>
+                    <div>
+                        <label for="itemWidth" class="input-label">عرض العبوة (سم):</label>
+                        <input type="number" id="itemWidth" step="any" required class="input-field" placeholder="مثال: 7" />
+                    </div>
+                    <div>
+                        <label for="itemHeight" class="input-label">ارتفاع العبوة (سم):</label>
+                        <input type="number" id="itemHeight" step="any" required class="input-field" placeholder="مثال: 5" />
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="numItems" class="input-label">عدد العبوات:</label>
+                    <input type="number" id="numItems" step="1" min="1" required class="input-field" placeholder="مثال: 24" />
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span>احسب الأبعاد</span>
+                </button>
+            </form>
+            <div id="errorMessage" class="error-message hidden"></div>
+            <div id="results" class="result-card hidden">
+                <h2 class="result-title">الحلول المثلى لترتيب العبوات</h2>
+                <div id="solutionsContainer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
